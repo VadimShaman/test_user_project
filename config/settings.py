@@ -146,10 +146,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.SessionAuthentication",  # временно
+        "accounts.authentication.JWTAuthentication",  # Наша JWT аутентификация
+        "rest_framework.authentication.SessionAuthentication",  # Для админки
     ],
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",  # по умолчанию требуем аутентификацию
+        "rest_framework.permissions.IsAuthenticated",  # По умолчанию требуем аутентификацию
     ],
 }
 
